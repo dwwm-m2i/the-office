@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <form method="post">
     @csrf
 
@@ -24,3 +28,5 @@
 
     <button>S'inscrire</button>
 </form>
+
+@endsection
