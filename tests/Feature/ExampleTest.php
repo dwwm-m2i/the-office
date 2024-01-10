@@ -23,4 +23,11 @@ class ExampleTest extends TestCase
 
         $response->assertSee('<h1>Hello Toto</h1>', false);
     }
+
+    public function test_formulaire_affichage()
+    {
+        $response = $this->get('/formulaire');
+        $response ->assertSee('<label for="prix">prix:</label>',false);
+        $response->assertSee('<label for="nom">nom de la salle:</label>',false);
+    }
 }

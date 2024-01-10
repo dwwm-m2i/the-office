@@ -22,3 +22,10 @@ Route::get('/hello', function () {
         'name' => 'Toto',
     ]);
 });
+
+
+Route::get('/formulaire',function(){
+    return view('formulaire');
+}
+
+);
