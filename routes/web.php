@@ -26,3 +26,7 @@ Route::get('/hello', function () {
 Route::get('/salles', function () {
     return view('salles');
 });
+
+Route::get('/salle/{id}', function ($id) {
+    return view('salle-detail', ['salleId' => $id]);
+});
