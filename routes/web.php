@@ -22,3 +22,7 @@ Route::get('/hello', function () {
         'name' => 'Toto',
     ]);
 });
+
+Route::get('/salles', function () {
+    return view('salles');
+});
