@@ -66,3 +66,7 @@ Route::get('/salles', function () {
         ],
     ]);
 });
+
+Route::get('/salle/{id}', function ($id) {
+    return view('salle-detail', ['salleId' => $id]);
+});
