@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <form method="post">
     @csrf
 
@@ -19,3 +23,5 @@
 
     <button>Connexion</button>
 </form>
+
+@endsection
