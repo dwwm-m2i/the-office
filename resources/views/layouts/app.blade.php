@@ -14,6 +14,14 @@
         <ul>
             <li><a href="/">Accueil</a></li>
             <li><a href="/salles">Liste des Salles</a></li>
+            <li><a href="/formulaire">Ajout Salle</a></li>
+            @auth
+            <li>{{ Auth::user()->name }}</li>
+            <li><a href="/logout">Déconnexion</a></li>
+            @else
+            <li><a href="/register">Inscription</a></li>
+            <li><a href="/login">Connexion</a></li>
+            @endauth
         </ul>
     </nav>
 
