@@ -32,3 +32,25 @@ Route::get('/hello', function () {
         'name' => 'Toto',
     ]);
 });
+
+Route::get('/salles', function () {
+    return view('salles', [
+        'rooms' => [
+            [
+                'id' => 1,
+                'name' => 'chambre 1',
+                'price' => 250,
+            ],
+            [
+                'id' => 2,
+                'name' => 'chambre 2',
+                'price' => 250,
+            ],
+            [
+                'id' => 3,
+                'name' => 'chambre 3',
+                'price' => 250,
+            ],
+        ],
+    ]);
+});

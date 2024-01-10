@@ -23,4 +23,22 @@ class ExampleTest extends TestCase
 
         $response->assertSee('<h1>Hello Toto</h1>', false);
     }
+
+    public function test_salles_route_returns_rooms_list()
+    {
+        $response = $this->get('/salles');
+
+        $response->assertSee('<th>ID</th>', false);
+        $response->assertSee('<th>Nom de la Salle</th>', false);
+        $response->assertSee('<th>Prix de la salle</th>', false);
+        $response->assertSee('<td> 1 </td>', false);
+        $response->assertSee('<td> chambre 1 </td>', false);
+        $response->assertSee('<td> 250 </td>', false);
+        $response->assertSee('<td> 2 </td>', false);
+        $response->assertSee('<td> chambre 2 </td>', false);
+        $response->assertSee('<td> 250 </td>', false);
+        $response->assertSee('<td> 3 </td>', false);
+        $response->assertSee('<td> chambre 3 </td>', false);
+        $response->assertSee('<td> 250 </td>', false);
+    }
 }
