@@ -34,7 +34,7 @@ class RegisterControllerTest extends TestCase
         ]);
 
         // Vérifie que le mot de passe de l'utilisateur est bien hashé
-        $user = User::find(1);
+        $user = User::where('email', 'fiorella@boxydev.com')->first();
         $this->assertNotEquals('password', $user->password);
 
         // On doit être connecté en tant que Fiorella
