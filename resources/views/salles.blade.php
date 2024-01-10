@@ -13,21 +13,13 @@
             </tr>
         </thead>
         <tbody>
+                @foreach ($rooms as $room)
                 <tr>
-                    <td> 1 </td>
-                    <td> chambre 1 </td>
-                    <td> 250 </td>
+                    <td> {{ $room['id'] }} </td>
+                    <td> {{ $room['name'] }} </td>
+                    <td> {{ $room['price'] }} </td>
                 </tr>
-                <tr>
-                    <td> 2 </td>
-                    <td> chambre 2 </td>
-                    <td> 250 </td>
-                </tr>
-                <tr>
-                    <td> 3 </td>
-                    <td> chambre 3 </td>
-                    <td> 250 </td>
-                </tr>
+                @endforeach
         </tbody>
     </table>
 
