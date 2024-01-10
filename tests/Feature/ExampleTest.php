@@ -24,10 +24,28 @@ class ExampleTest extends TestCase
         $response->assertSee('<h1>Hello Toto</h1>', false);
     }
 
-    public function test_formulaire_affichage()
+    public function test_display_form()
     {
         $response = $this->get('/formulaire');
-        $response ->assertSee('<label for="prix">prix:</label>',false);
-        $response->assertSee('<label for="nom">nom de la salle:</label>',false);
+
+        $response ->assertSee('<label for="price">prix:</label>',false);
+        $response->assertSee('<label for="name">nom de la salle:</label>',false);
+    }
+
+    public function test_validation_form()
+    {
+        $response = $this->post('/formulaire', [
+            'name' => 'Une salle',
+            'price' => 12.12,
+        ]);
+
+        $response->assertSessionHasNoErrors();
+
+        $response = $this->post('/formulaire', [
+            'name' => '',
+            'price' => 'mauvais prix',
+        ]);
+
+        $response->assertSessionHasErrors(['name', 'price']);
     }
 }
