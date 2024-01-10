@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,17 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/hello', function () {
     return view('hello', [
         'name' => 'Toto',
+    ]);
+});
+
+Route::get('/formulaire', function () {
+    return view('formulaire');
+});
+
+Route::post('/formulaire', function (Request $request) {
+    $request->validate([
+        'name' => 'required|max:255',
+        'price' => 'required|numeric|min:1',
     ]);
 });
 
